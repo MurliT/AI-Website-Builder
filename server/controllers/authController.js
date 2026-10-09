@@ -5,10 +5,11 @@ const JWT_SECRET  = process.env.JWT_SECRET || "fallback_secret"
 
 // Helper to set cookie
 const setSessionCookie = (res, payload)=>{
+    const isSecure = process.env.COOKIE_SECURE === "true";
     const token = jwt.sign(payload, JWT_SECRET, {expiresIn: "30d"})
     res.cookie('token', token, {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
+        secure: isSecure,
         sameSite: "lax",
         maxAge: 30 * 24 * 60 * 60 * 1000, // 30 days
         path: "/",
@@ -79,9 +80,10 @@ export async function login(req, res){
 }
 
 export async function logout(_req, res){
+    const isSecure = process.env.COOKIE_SECURE === "true";
     res.cookie("token", "", {
         httpOnly: true,
-        secure: process.env.NODE_ENV === "production",
+        secure: isSecure,
         sameSite: "lax",
         maxAge: 0,
         path: "/",
