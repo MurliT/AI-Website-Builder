@@ -92,6 +92,10 @@ const dependencies = useMemo(()=>{
         files={sandpackFiles} 
         customSetup={{dependencies}} 
         options={{
+            bundlerTimeOut: 90000,
+            initMode: "user-visible",
+            recompileMode: "delayed",
+            recompileDelay: 500,
             externalResources: [
                 "https://cdn.tailwindcss.com",
                 "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css",
