@@ -30,39 +30,6 @@ conversationally.
 -   **Cloud database:** Store user accounts and project data in MongoDB
     Atlas.
 
-## Screenshots
-
-### 1. System Architecture
-
-The architecture connects the user's browser to the React frontend
-served by Nginx. The frontend communicates with the Node.js/Express API,
-which uses MongoDB Atlas for persistence and OpenRouter for AI-powered
-code generation.
-
-![BuilderAI system architecture](assets/architecture-diagram.png)
-
-### 2. BuilderAI Homepage
-
-The homepage provides the prompt interface where users describe the
-website they want to create.
-
-![BuilderAI homepage](assets/builderai-homepage.png)
-
-### 3. Generated Project -- File Explorer and Editor
-
-Generated project files can be explored and inspected in the builder
-interface.
-
-![Generated project editor](assets/generated-project-editor.png)
-
-### 4. Live Preview and Database
-
-The generated React website is displayed in the live preview. Project
-and user records are stored in MongoDB Atlas.
-
-![Live preview and MongoDB
-database](assets/live-preview-and-database.png)
-
 ## Technology Stack
 
   Layer              Technologies
